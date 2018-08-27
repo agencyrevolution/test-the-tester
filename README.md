@@ -5,7 +5,7 @@ Hello candidate - we're excited to have you apply for our team. We love to move 
 
 Fork this repo and use the following acceptance requirements to write a test in your favorite framework. We'll email you the login directly, which you'll need.
 
-Login to the app, view the Inspector to understand the login process so you can ask us specific questions for help. 
+Login to the app https://fuse.agencyrevolution.com/, view the Inspector to understand the login process so you can ask us specific questions for help. 
 
 When you're done make a Pull Request and we'll review.
 
