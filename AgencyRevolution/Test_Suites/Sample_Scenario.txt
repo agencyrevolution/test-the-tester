@@ -20,8 +20,7 @@ A Sample Test Case
     Then I should see the a title on the screen is Edit Message
     And I name my message ${email_title}
     And I click Continue button
-    Comment    TEst here
-    Then Several audiences appear and match the filter
+    Then I can confirm the segment matches the choice has made 15 days
     And I click Continue button
     And I click Browse message library button
     Then I choose Use Email for a card name Claims Feedback
@@ -30,10 +29,3 @@ A Sample Test Case
     Comment    Then I should see the a title on the screen is Message Center
     Comment    Then I should see an email created previously with email title ${email_title}
     [Teardown]    Close Browser
-
-test
-    [Setup]    Open Browser and Navigate to Test page
-    Sleep    2s
-    ${source}=    Get Source
-    log    ${source}
-    [Teardown]    Close All Browsers

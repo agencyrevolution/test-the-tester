@@ -26,13 +26,14 @@ I hit SEND and Send one email
 
 I name my message ${description}
     Wait Until Page Contains Element    ${Accounts_Message_name}    ${time_out}
-    Input Text     ${Accounts_Message_name}    ${description}
+    Input Text    ${Accounts_Message_name}    ${description}
 
 I choose ${button_text} for a card name ${card_name}
     Wait Until Page Contains Element    ${Accounts_Message_Library_button_with_card_name.replace('<button_name>','${button_text}').replace('<card_name>','${card_name}')}    ${time_out}
     Click Element    ${Accounts_Message_Library_button_with_card_name.replace('<button_name>','${button_text}').replace('<card_name>','${card_name}')}
 
-Several audiences appear and match the filter
-
 I should see an email created previously with email title ${title}
     Wait Until Page Contains Element    //span[contains(., '${title}')]    ${time_out}    Could not see the email with title ${title}
+
+I can confirm the segment matches the choice has made ${number_of_day} days
+    Wait Until Page Contains Element    //*[text()="Accounts with upcoming renewals"]/../following-sibling::div[1]//span[3][text()="${number_of_days} days"]    ${time_out}    Number of selected days is not correct
