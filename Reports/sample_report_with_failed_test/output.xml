@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180828 16:46:51.425" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<suite source="D:\test\test-the-tester\AgencyRevolution" id="s1" name="AgencyRevolution">
+<suite source="D:\test\test-the-tester\AgencyRevolution\Test_Suites" id="s1-s1" name="Test Suites">
+<suite source="D:\test\test-the-tester\AgencyRevolution\Test_Suites\Sample_Scenario.txt" id="s1-s1-s1" name="Sample Scenario">
+<test id="s1-s1-s1-t1" name="A Sample Test Case">
+<kw type="setup" name="Open Browser and Navigate to Test page" library="browser_management">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20180828 16:46:51.592" level="INFO">Opening browser 'gc' to base url 'https://fuse.agencyrevolution.com/'.</msg>
+<status status="PASS" endtime="20180828 16:47:01.482" starttime="20180828 16:46:51.592"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180828 16:47:02.691" starttime="20180828 16:47:01.487"></status>
+</kw>
+<kw name="Jump in frame" library="common_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>//iframe</arg>
+</arguments>
+<msg timestamp="20180828 16:47:02.692" level="INFO">Selecting frame '//iframe'.</msg>
+<status status="PASS" endtime="20180828 16:47:02.740" starttime="20180828 16:47:02.692"></status>
+</kw>
+<status status="PASS" endtime="20180828 16:47:02.741" starttime="20180828 16:47:02.691"></status>
+</kw>
+<status status="PASS" endtime="20180828 16:47:02.741" starttime="20180828 16:46:51.591"></status>
+</kw>
+<kw name="Generate random email title" library="common_keywords">
+<assign>
+<var>${email_title}</var>
+</assign>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>20</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${random_title}</var>
+</assign>
+<msg timestamp="20180828 16:47:02.743" level="INFO">${random_title} = GfKKQfYZgTDITsikIJKv</msg>
+<status status="PASS" endtime="20180828 16:47:02.743" starttime="20180828 16:47:02.743"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${random_title}</arg>
+</arguments>
+<msg timestamp="20180828 16:47:02.744" level="INFO">${random_title} = GfKKQfYZgTDITsikIJKv</msg>
+<status status="PASS" endtime="20180828 16:47:02.744" starttime="20180828 16:47:02.744"></status>
+</kw>
+<msg timestamp="20180828 16:47:02.745" level="INFO">${email_title} = GfKKQfYZgTDITsikIJKv</msg>
+<status status="PASS" endtime="20180828 16:47:02.745" starttime="20180828 16:47:02.741"></status>
+</kw>
+<kw name="When I log in with ${email_address} and ${password}" library="signin">
+<kw name="Login" library="signin">
+<doc>Author: Minh Nguyen</doc>
+<arguments>
+<arg>${email}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Email Address" library="signin">
+<doc>Author: Minh Nguyen</doc>
+<arguments>
+<arg>${email_address}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${SignIn_email}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 16:47:02.768" starttime="20180828 16:47:02.752"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SignIn_email}</arg>
+<arg>${email_address}</arg>
+</arguments>
+<msg timestamp="20180828 16:47:02.769" level="INFO">Typing text 'ar-candidate@example.com' into text field '//input[@placeholder="Email"]'.</msg>
+<status status="PASS" endtime="20180828 16:47:03.141" starttime="20180828 16:47:02.769"></status>
+</kw>
+<status status="PASS" endtime="20180828 16:47:03.142" starttime="20180828 16:47:02.750"></status>
+</kw>
+<kw name="Input Secured Password" library="signin">
+<doc>Author: Minh Nguyen</doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${SignIn_password}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 16:47:03.159" starttime="20180828 16:47:03.142"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SignIn_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20180828 16:47:03.160" level="INFO">Typing password into text field '//input[@placeholder="Password"]'.</msg>
+<status status="PASS" endtime="20180828 16:47:03.306" starttime="20180828 16:47:03.160"></status>
+</kw>
+<status status="PASS" endtime="20180828 16:47:03.306" starttime="20180828 16:47:03.142"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${remember_me}==True</arg>
+<arg>Check Remember me</arg>
+</arguments>
+<status status="PASS" endtime="20180828 16:47:03.308" starttime="20180828 16:47:03.306"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20180828 16:47:03.309" level="INFO">jG\{D$}WP&gt;f)r7QT</msg>
+<status status="PASS" endtime="20180828 16:47:03.311" starttime="20180828 16:47:03.309"></status>
+</kw>
+<kw name="I click LOGIN button" library="common_keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//button[contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz'),"${text.lower()}")]</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180828 16:47:03.337" starttime="20180828 16:47:03.313"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//button[contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz'),"${text.lower()}")]</arg>
+</arguments>
+<msg timestamp="20180828 16:47:03.339" level="INFO">Clicking element '//button[contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz'),"login")]'.</msg>
+<status status="PASS" endtime="20180828 16:47:03.452" starttime="20180828 16:47:03.338"></status>
+</kw>
+<status status="PASS" endtime="20180828 16:47:03.452" starttime="20180828 16:47:03.312"></status>
+</kw>
+<status status="PASS" endtime="20180828 16:47:03.453" starttime="20180828 16:47:02.750"></status>
+</kw>
+<status status="PASS" endtime="20180828 16:47:03.453" starttime="20180828 16:47:02.749"></status>
+</kw>
+<kw name="Then I should see the a title on the screen is Marketing Dashboard" library="marketing_dashboard">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Marketing_Dashboard_title_template.replace('&lt;text&gt;', '${title}')}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180828 16:47:13.946" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180828 16:47:13.946" starttime="20180828 16:47:13.568"></status>
+</kw>
+<msg timestamp="20180828 16:47:13.947" level="FAIL">Element '//div[text()="Marketing Dashboard"]' did not appear in 10 seconds.</msg>
+<status status="FAIL" endtime="20180828 16:47:13.947" starttime="20180828 16:47:03.453"></status>
+</kw>
+<status status="FAIL" endtime="20180828 16:47:13.947" starttime="20180828 16:47:03.453"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180828 16:47:33.398" starttime="20180828 16:47:13.947"></status>
+</kw>
+<status status="FAIL" endtime="20180828 16:47:33.398" critical="yes" starttime="20180828 16:46:51.590">Element '//div[text()="Marketing Dashboard"]' did not appear in 10 seconds.</status>
+</test>
+<status status="FAIL" endtime="20180828 16:47:33.402" starttime="20180828 16:46:51.467"></status>
+</suite>
+<status status="FAIL" endtime="20180828 16:47:33.408" starttime="20180828 16:46:51.465"></status>
+</suite>
+<status status="FAIL" endtime="20180828 16:47:33.413" starttime="20180828 16:46:51.444"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="AgencyRevolution" pass="0">AgencyRevolution</stat>
+<stat fail="1" id="s1-s1" name="Test Suites" pass="0">AgencyRevolution.Test Suites</stat>
+<stat fail="1" id="s1-s1-s1" name="Sample Scenario" pass="0">AgencyRevolution.Test Suites.Sample Scenario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

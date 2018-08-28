@@ -1,0 +1,10 @@
+--outputdir
+c:\users\minhn\appdata\local\temp\RIDEcdkg9r.d
+-C
+off
+-W
+126
+--suite
+AgencyRevolution.Test Suites.Sample Scenario
+--test
+AgencyRevolution.Test Suites.Sample Scenario.A Sample Test Case
