@@ -1,0 +1,15 @@
+*** Settings ***
+Resource          global_variables.txt
+Variables         ../Object_Repositories/marketing_dashboard.py
+
+*** Keywords ***
+I should see the a title on the screen is ${title}
+    Wait Until Page Contains Element    ${Marketing_Dashboard_title_template.replace('<text>', '${title}')}    ${time_out}
+
+I click on ${view} on the top navigation bar
+    Wait Until Page Contains Element    //span[text()="${view}"]    ${time_out}
+    Click Element    //span[text()="${view}"]
+
+I click on ${button_name} for ${app_name}
+    Wait Until Page Contains Element    ${Accounts_button_with_account.replace('<account>', '${account_name}').replace('<button>', '${button_name}')}    ${time_out}
+    Click Element    ${Accounts_button_with_account.replace('<account>', '${account_name}').replace('<button>', '${button_name}')}

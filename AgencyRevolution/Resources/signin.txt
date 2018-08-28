@@ -1,0 +1,38 @@
+*** Settings ***
+Variables         ../Object_Repositories/signin.py
+Resource          global_variables.txt
+
+*** Keywords ***
+Login
+    [Arguments]    ${email_address}    ${password}    ${remember_me}=False
+    [Documentation]    Author: Minh Nguyen
+    ...    Created Date: Aug 29, 2018
+    ...    Description: Log in then verify if there is any error it'll try to login again
+    Input Email Address    ${email_address}
+    Input Secured Password    ${password}
+    Run Keyword If    ${remember_me}==True    Check Remember me
+    log    ${password}
+    I click LOGIN button
+
+Input Email Address
+    [Arguments]    ${email_address}
+    [Documentation]    Author: Minh Nguyen
+    ...    Created Date: Aug 29, 2018
+    ...    Description: Input email address into email text field on SignIn screen
+    Wait Until Page Contains Element    ${SignIn_email}    ${time_out}
+    Input Text    ${SignIn_email}    ${email_address}
+
+Input Secured Password
+    [Arguments]    ${password}
+    [Documentation]    Author: Minh Nguyen
+    ...    Created Date: Aug 29, 2018
+    ...    Description: Input password into Password text field on SignIn screen
+    Wait Until Page Contains Element    ${SignIn_password}    ${time_out}
+    Input Password    ${SignIn_password}    ${password}
+
+Check Remember me
+    Wait Until Page Contains Element    ${SignIn_remember_me}    ${time_out}
+    Click Element    ${SignIn_remember_me}
+
+I log in with ${email} and ${password}
+    Login    ${email}    ${password}

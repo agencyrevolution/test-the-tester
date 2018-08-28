@@ -1,0 +1,39 @@
+*** Settings ***
+Resource          ../Resources/global_variables.txt
+
+*** Test Cases ***
+A Sample Test Case
+    [Setup]    Open Browser and Navigate to Test page
+    ${email_title}    Generate random email title
+    When I log in with ${email_address} and ${password}
+    Then I should see the a title on the screen is Marketing Dashboard
+    When I click on Accounts on the top navigation bar
+    Then I should see the a title on the screen is Lists
+    When I click on View for AMS 360
+    Then I should see the a title on the screen is AMS 360
+    When I click on show more button
+    And I click on Accounts with upcoming renewals
+    When I change setting to ${number_of_days} days
+    And I click OK button
+    Then I should see the a title on the screen is Accounts with renewals in 15 days
+    When I hit SEND and Send one email
+    Then I should see the a title on the screen is Edit Message
+    And I name my message ${email_title}
+    And I click Continue button
+    Comment    TEst here
+    Then Several audiences appear and match the filter
+    And I click Continue button
+    And I click Browse message library button
+    Then I choose Use Email for a card name Claims Feedback
+    And I click Continue button
+    Comment    And I click Send it now button
+    Comment    Then I should see the a title on the screen is Message Center
+    Comment    Then I should see an email created previously with email title ${email_title}
+    [Teardown]    Close Browser
+
+test
+    [Setup]    Open Browser and Navigate to Test page
+    Sleep    2s
+    ${source}=    Get Source
+    log    ${source}
+    [Teardown]    Close All Browsers

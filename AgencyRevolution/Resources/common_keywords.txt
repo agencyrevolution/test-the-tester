@@ -1,0 +1,15 @@
+*** Settings ***
+Resource          global_variables.txt
+
+*** Keywords ***
+I click ${text} button
+    Wait Until Page Contains Element    //button[contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz'),"${text.lower()}")]    ${time_out}
+    Click Element    //button[contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz'),"${text.lower()}")]
+
+Generate random email title
+    ${random_title}=    Generate Random String    20    [LETTERS]
+    Set Test Variable    ${random_title}
+    [Return]    ${random_title}
+
+Jump in frame
+    Select Frame    //iframe

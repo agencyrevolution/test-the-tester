@@ -1,0 +1,8 @@
+*** Settings ***
+Resource          global_variables.txt
+
+*** Keywords ***
+Open Browser and Navigate to Test page
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
+    Jump in frame

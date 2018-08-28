@@ -1,0 +1,38 @@
+*** Settings ***
+Resource          global_variables.txt
+Variables         ../Object_Repositories/accounts.py
+
+*** Keywords ***
+I click on show more button
+    Wait Until Page Contains Element    ${Accounts_show_more}    ${time_out}
+    Click Element    ${Accounts_show_more}
+
+I click on ${link_text}
+    Wait Until Page Contains Element    ${Accounts_link_text.replace('<text>', '${link_text}')}    ${time_out}
+    Click Element    ${Accounts_link_text.replace('<text>', '${link_text}')}
+
+I change setting to ${number_of_days} days
+    Wait Until Page Contains Element    ${Accounts_Upcoming_Renewals_Filter_days}
+    Click Element    ${Accounts_Upcoming_Renewals_Filter_days}
+    Wait Until Page Contains Element    ${Accounts_Upcoming_Renewals_days}
+    Input Text    ${Accounts_Upcoming_Renewals_days}    ${number_of_days}
+    I click Select button
+
+I hit SEND and Send one email
+    Wait Until Page Contains Element    ${Accounts_send}    ${time_out}
+    Click Element    ${Accounts_send}
+    Wait Until Page Contains Element    ${Accounts_Send_send_one_email}    ${time_out}
+    Click Element    ${Accounts_Send_send_one_email}
+
+I name my message ${description}
+    Wait Until Page Contains Element    ${Accounts_Message_name}    ${time_out}
+    Input Text     ${Accounts_Message_name}    ${description}
+
+I choose ${button_text} for a card name ${card_name}
+    Wait Until Page Contains Element    ${Accounts_Message_Library_button_with_card_name.replace('<button_name>','${button_text}').replace('<card_name>','${card_name}')}    ${time_out}
+    Click Element    ${Accounts_Message_Library_button_with_card_name.replace('<button_name>','${button_text}').replace('<card_name>','${card_name}')}
+
+Several audiences appear and match the filter
+
+I should see an email created previously with email title ${title}
+    Wait Until Page Contains Element    //span[contains(., '${title}')]    ${time_out}    Could not see the email with title ${title}

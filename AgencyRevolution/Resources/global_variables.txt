@@ -1,0 +1,15 @@
+*** Settings ***
+Library           SeleniumLibrary
+Resource          browser_management.txt
+Resource          signin.txt
+Resource          marketing_dashboard.txt
+Resource          accounts.txt
+Resource          common_keywords.txt
+Library           String
+
+*** Variables ***
+${browser}        gc
+${url}            https://fuse.agencyrevolution.com/
+${time_out}       10s
+${email_address}    ar-candidate@example.com
+${password}       jG\\{D$}WP>f)r7QT
