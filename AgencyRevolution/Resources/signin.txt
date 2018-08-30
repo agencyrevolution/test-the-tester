@@ -11,8 +11,7 @@ Login
     Input Email Address    ${email_address}
     Input Secured Password    ${password}
     Run Keyword If    ${remember_me}==True    Check Remember me
-    log    ${password}
-    I click LOGIN button
+    Click LOGIN button
 
 Input Email Address
     [Arguments]    ${email_address}
@@ -36,3 +35,9 @@ Check Remember me
 
 I log in with ${email} and ${password}
     Login    ${email}    ${password}
+    ${result}=    Run Keyword And Return Status    Wait until page contains    We haven't seen you in awhile, so we logged you out. Login again to continue your session.    5s
+    Run Keyword If    ${result}==True    Login    ${email}    ${password}
+
+Click LOGIN button
+    Wait Until Page Contains Element    ${SignIn_login}    ${time_out}
+    Click Element    ${SignIn_login}

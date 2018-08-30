@@ -4,5 +4,6 @@ Resource          global_variables.txt
 *** Keywords ***
 Open Browser and Navigate to Test page
     Open Browser    ${url}    ${browser}
+    Comment    Set Selenium Speed    0.2
     Maximize Browser Window
     Jump in frame

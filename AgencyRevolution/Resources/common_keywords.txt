@@ -3,8 +3,8 @@ Resource          global_variables.txt
 
 *** Keywords ***
 I click ${text} button
-    Wait Until Page Contains Element    //button[contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz'),"${text.lower()}")]    ${time_out}
-    Click Element    //button[contains(translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz'),"${text.lower()}")]
+    Wait Until Page Contains Element    //button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="${text.lower()}"]    ${time_out}
+    Click Element    //button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="${text.lower()}"]
 
 Generate random email title
     ${random_title}=    Generate Random String    20    [LETTERS]
@@ -13,3 +13,7 @@ Generate random email title
 
 Jump in frame
     Select Frame    //iframe
+
+Wait until page is loaded
+    Wait Until Element Is Not Visible    //circle    ${time_out}
+    Sleep    1
