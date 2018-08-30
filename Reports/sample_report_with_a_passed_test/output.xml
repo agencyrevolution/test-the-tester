@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180830 10:41:34.813" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<suite source="D:\test\test-the-tester\AgencyRevolution" id="s1" name="AgencyRevolution">
+<suite source="D:\test\test-the-tester\AgencyRevolution\Test_Suites" id="s1-s1" name="Test Suites">
+<suite source="D:\test\test-the-tester\AgencyRevolution\Test_Suites\Sample_Scenario.txt" id="s1-s1-s1" name="Sample Scenario">
+<test id="s1-s1-s1-t1" name="A Sample Test Case">
+<kw type="setup" name="Open Browser and Navigate to Test page" library="browser_management">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:34.969" level="INFO">Opening browser 'gc' to base url 'https://fuse.agencyrevolution.com/'.</msg>
+<status status="PASS" endtime="20180830 10:41:40.512" starttime="20180830 10:41:34.969"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Set Selenium Speed</arg>
+<arg>0.2</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:40.516" starttime="20180830 10:41:40.513"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180830 10:41:41.644" starttime="20180830 10:41:40.517"></status>
+</kw>
+<kw name="Jump in frame" library="common_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>//iframe</arg>
+</arguments>
+<msg timestamp="20180830 10:41:41.644" level="INFO">Selecting frame '//iframe'.</msg>
+<status status="PASS" endtime="20180830 10:41:41.675" starttime="20180830 10:41:41.644"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:41.675" starttime="20180830 10:41:41.644"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:41.675" starttime="20180830 10:41:34.969"></status>
+</kw>
+<kw name="Generate random email title" library="common_keywords">
+<assign>
+<var>${email_title}</var>
+</assign>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>20</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${random_title}</var>
+</assign>
+<msg timestamp="20180830 10:41:41.675" level="INFO">${random_title} = PgAIeXsxRsQVWaeZhTzX</msg>
+<status status="PASS" endtime="20180830 10:41:41.675" starttime="20180830 10:41:41.675"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${random_title}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:41.675" level="INFO">${random_title} = PgAIeXsxRsQVWaeZhTzX</msg>
+<status status="PASS" endtime="20180830 10:41:41.675" starttime="20180830 10:41:41.675"></status>
+</kw>
+<msg timestamp="20180830 10:41:41.675" level="INFO">${email_title} = PgAIeXsxRsQVWaeZhTzX</msg>
+<status status="PASS" endtime="20180830 10:41:41.675" starttime="20180830 10:41:41.675"></status>
+</kw>
+<kw name="When I log in with ${email_address} and ${password}" library="signin">
+<kw name="Login" library="signin">
+<doc>Author: Minh Nguyen</doc>
+<arguments>
+<arg>${email}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Email Address" library="signin">
+<doc>Author: Minh Nguyen</doc>
+<arguments>
+<arg>${email_address}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${SignIn_email}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:41.691" starttime="20180830 10:41:41.675"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SignIn_email}</arg>
+<arg>${email_address}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:41.691" level="INFO">Typing text 'ar-candidate@example.com' into text field '//input[@placeholder="Email"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:41.876" starttime="20180830 10:41:41.691"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:41.876" starttime="20180830 10:41:41.675"></status>
+</kw>
+<kw name="Input Secured Password" library="signin">
+<doc>Author: Minh Nguyen</doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${SignIn_password}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:41.894" starttime="20180830 10:41:41.877"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SignIn_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:41.896" level="INFO">Typing password into text field '//input[@placeholder="Password"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:42.009" starttime="20180830 10:41:41.895"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:42.010" starttime="20180830 10:41:41.877"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${remember_me}==True</arg>
+<arg>Check Remember me</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:42.012" starttime="20180830 10:41:42.011"></status>
+</kw>
+<kw name="Click LOGIN button" library="signin">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${SignIn_login}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:42.029" starttime="20180830 10:41:42.013"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${SignIn_login}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:42.029" level="INFO">Clicking element '//div[text()="LOGIN"]/parent::button'.</msg>
+<status status="PASS" endtime="20180830 10:41:42.135" starttime="20180830 10:41:42.029"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:42.135" starttime="20180830 10:41:42.012"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:42.135" starttime="20180830 10:41:41.675"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait until page contains</arg>
+<arg>We haven't seen you in awhile, so we logged you out. Login again to continue your session.</arg>
+<arg>5s</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>We haven't seen you in awhile, so we logged you out. Login again to continue your session.</arg>
+<arg>5s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180830 10:41:47.533" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-56.png"&gt;&lt;img src="selenium-screenshot-56.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180830 10:41:47.533" starttime="20180830 10:41:47.221"></status>
+</kw>
+<msg timestamp="20180830 10:41:47.533" level="FAIL">Text 'We haven't seen you in awhile, so we logged you out. Login again to continue your session.' did not appear in 5 seconds.</msg>
+<status status="FAIL" endtime="20180830 10:41:47.533" starttime="20180830 10:41:42.136"></status>
+</kw>
+<msg timestamp="20180830 10:41:47.533" level="INFO">${result} = False</msg>
+<status status="PASS" endtime="20180830 10:41:47.533" starttime="20180830 10:41:42.135"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${result}==True</arg>
+<arg>Login</arg>
+<arg>${email}</arg>
+<arg>${password}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:47.533" starttime="20180830 10:41:47.533"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:47.533" starttime="20180830 10:41:41.675"></status>
+</kw>
+<kw name="Then I should see the a title on the screen is Marketing Dashboard" library="marketing_dashboard">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Marketing_Dashboard_title_template.replace('&lt;text&gt;', '${title}')}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:47.549" starttime="20180830 10:41:47.533"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Sleep</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:47.549" starttime="20180830 10:41:47.549"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:47.549" starttime="20180830 10:41:47.533"></status>
+</kw>
+<kw name="When I click on Accounts on the top navigation bar" library="marketing_dashboard">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//span[text()="${view}"]</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:47.564" starttime="20180830 10:41:47.549"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//span[text()="${view}"]</arg>
+</arguments>
+<msg timestamp="20180830 10:41:47.564" level="INFO">Clicking element '//span[text()="Accounts"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:47.672" starttime="20180830 10:41:47.564"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:47.673" starttime="20180830 10:41:47.549"></status>
+</kw>
+<kw name="Then I should see the a title on the screen is Lists" library="marketing_dashboard">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Marketing_Dashboard_title_template.replace('&lt;text&gt;', '${title}')}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:47.693" starttime="20180830 10:41:47.675"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Sleep</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:47.696" starttime="20180830 10:41:47.695"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:47.696" starttime="20180830 10:41:47.674"></status>
+</kw>
+<kw name="When I click on View for AMS 360" library="marketing_dashboard">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_button_with_account.replace('&lt;account&gt;', '${account_name}').replace('&lt;button&gt;', '${button_name}')}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:47.718" starttime="20180830 10:41:47.697"></status>
+</kw>
+<kw name="Focus" library="SeleniumLibrary">
+<doc>Deprecated. Use `Set Focus To Element` instead.</doc>
+<arguments>
+<arg>${Accounts_button_with_account.replace('&lt;account&gt;', '${account_name}').replace('&lt;button&gt;', '${button_name}')}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:47.733" starttime="20180830 10:41:47.719"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_button_with_account.replace('&lt;account&gt;', '${account_name}').replace('&lt;button&gt;', '${button_name}')}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:47.736" level="INFO">Clicking element '//header[text()="AMS 360"]/following-sibling::div//span[text()="View"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:47.967" starttime="20180830 10:41:47.734"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:47.968" starttime="20180830 10:41:47.696"></status>
+</kw>
+<kw name="Then I should see the a title on the screen is AMS 360" library="marketing_dashboard">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Marketing_Dashboard_title_template.replace('&lt;text&gt;', '${title}')}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:47.989" starttime="20180830 10:41:47.969"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Sleep</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:47.990" starttime="20180830 10:41:47.990"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:47.991" starttime="20180830 10:41:47.968"></status>
+</kw>
+<kw name="When I click show more" library="accounts">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_show_more}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:48.020" starttime="20180830 10:41:47.993"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_show_more}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:48.021" level="INFO">Clicking element '//div[@class="remaining-link"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:48.097" starttime="20180830 10:41:48.020"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20180830 10:41:49.099" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180830 10:41:49.099" starttime="20180830 10:41:48.098"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:49.099" starttime="20180830 10:41:47.992"></status>
+</kw>
+<kw name="And I click on link Accounts with upcoming renewals" library="accounts">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_link_text.replace('&lt;text&gt;', '${link_text}')}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:49.120" starttime="20180830 10:41:49.100"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_link_text.replace('&lt;text&gt;', '${link_text}')}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:49.121" level="INFO">Clicking element '//div[text()="Accounts with upcoming renewals"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:49.237" starttime="20180830 10:41:49.120"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_Upcoming_Renewals_Filter_title}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:49.265" starttime="20180830 10:41:49.238"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:49.265" starttime="20180830 10:41:49.100"></status>
+</kw>
+<kw name="When I change setting to 15 days" library="accounts">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_Upcoming_Renewals_Filter_days}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:49.278" starttime="20180830 10:41:49.266"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${Accounts_Upcoming_Renewals_Filter_days}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:49.305" starttime="20180830 10:41:49.279"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Accounts_Upcoming_Renewals_Filter_days}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:49.336" starttime="20180830 10:41:49.306"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_Upcoming_Renewals_Filter_days}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:49.337" level="INFO">Clicking element '//*[text()="Accounts with upcoming renewals"]/following-sibling::div[1]//span[3]'.</msg>
+<status status="PASS" endtime="20180830 10:41:49.418" starttime="20180830 10:41:49.336"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_Upcoming_Renewals_days}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:49.433" starttime="20180830 10:41:49.418"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_Upcoming_Renewals_days}</arg>
+<arg>${number_of_days}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:49.434" level="INFO">Typing text '15' into text field '//input[@type="number"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:49.523" starttime="20180830 10:41:49.433"></status>
+</kw>
+<kw name="I click Select button" library="common_keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="${text.lower()}"]</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:49.540" starttime="20180830 10:41:49.525"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="${text.lower()}"]</arg>
+</arguments>
+<msg timestamp="20180830 10:41:49.541" level="INFO">Clicking element '//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="select"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:49.624" starttime="20180830 10:41:49.540"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:49.625" starttime="20180830 10:41:49.524"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_Upcoming_Renewals_Filter_days + '[text()="${number_of_days} days"]'}</arg>
+<arg>${number_of_days}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:49.641" starttime="20180830 10:41:49.626"></status>
+</kw>
+<kw name="And I click OK button" library="common_keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="${text.lower()}"]</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:49.663" starttime="20180830 10:41:49.644"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="${text.lower()}"]</arg>
+</arguments>
+<msg timestamp="20180830 10:41:49.664" level="INFO">Clicking element '//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="ok"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:49.852" starttime="20180830 10:41:49.664"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:49.853" starttime="20180830 10:41:49.643"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` disappears from current page.</doc>
+<arguments>
+<arg>${Accounts_Upcoming_Renewals_Filter_days}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:50.336" starttime="20180830 10:41:49.853"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` disappears from current page.</doc>
+<arguments>
+<arg>${Accounts_Upcoming_Renewals_Filter_title}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:50.343" starttime="20180830 10:41:50.337"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:50.343" starttime="20180830 10:41:49.266"></status>
+</kw>
+<kw name="Then I should see the a title on the screen is Accounts with renewals in 15 days" library="marketing_dashboard">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Marketing_Dashboard_title_template.replace('&lt;text&gt;', '${title}')}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:50.359" starttime="20180830 10:41:50.343"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Sleep</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:50.359" starttime="20180830 10:41:50.359"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:50.359" starttime="20180830 10:41:50.343"></status>
+</kw>
+<kw name="When I hit SEND and Send one email" library="accounts">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_send}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:50.359" starttime="20180830 10:41:50.359"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_send}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:50.375" level="INFO">Clicking element '//button[contains(., "SEND")]'.</msg>
+<status status="PASS" endtime="20180830 10:41:50.451" starttime="20180830 10:41:50.374"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_Send_send_one_email}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:50.464" starttime="20180830 10:41:50.451"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_Send_send_one_email}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:50.465" level="INFO">Clicking element '//div[text()="Send one email"]/following-sibling::div//button'.</msg>
+<status status="PASS" endtime="20180830 10:41:50.656" starttime="20180830 10:41:50.464"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:50.656" starttime="20180830 10:41:50.359"></status>
+</kw>
+<kw name="Then I should see the a title on the screen is Edit Message" library="marketing_dashboard">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Marketing_Dashboard_title_template.replace('&lt;text&gt;', '${title}')}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:51.996" starttime="20180830 10:41:50.659"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Sleep</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:51.997" starttime="20180830 10:41:51.996"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:51.998" starttime="20180830 10:41:50.657"></status>
+</kw>
+<kw name="And I name my message ${email_title}" library="accounts">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_Message_name}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:52.070" starttime="20180830 10:41:52.000"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_Message_name}</arg>
+<arg>${description}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:52.071" level="INFO">Typing text 'PgAIeXsxRsQVWaeZhTzX' into text field '//div[contains(@class, "naming")]//input'.</msg>
+<status status="PASS" endtime="20180830 10:41:52.356" starttime="20180830 10:41:52.070"></status>
+</kw>
+<kw name="Click Continue Button on Name Your Message" library="accounts">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_Message_Naming_continue}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:52.370" starttime="20180830 10:41:52.357"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Accounts_Message_Naming_continue}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:52.390" starttime="20180830 10:41:52.371"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_Message_Naming_continue}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:52.391" level="INFO">Clicking element '//div[contains(@class, "naming")]//button[.="Continue"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:52.603" starttime="20180830 10:41:52.390"></status>
+</kw>
+<kw name="Wait until page is loaded" library="common_keywords">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is not visible.</doc>
+<arguments>
+<arg>//circle</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:52.622" starttime="20180830 10:41:52.604"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180830 10:41:53.623" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180830 10:41:53.623" starttime="20180830 10:41:52.623"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:53.623" starttime="20180830 10:41:52.603"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:53.624" starttime="20180830 10:41:52.356"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:53.624" starttime="20180830 10:41:51.999"></status>
+</kw>
+<kw name="Then I can confirm the segment matches the choice has made 15 days" library="accounts">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//*[text()="Accounts with upcoming renewals"]/../following-sibling::div[1]//span[3][text()="${number_of_days} days"]</arg>
+<arg>${time_out}</arg>
+<arg>Number of selected days is not correct</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:53.645" starttime="20180830 10:41:53.625"></status>
+</kw>
+<kw name="Click Continue Button on Choose Your Audience" library="accounts">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_Message_Filter_Audience_continue}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:53.659" starttime="20180830 10:41:53.646"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Accounts_Message_Filter_Audience_continue}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:53.679" starttime="20180830 10:41:53.659"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_Message_Filter_Audience_continue}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:53.680" level="INFO">Clicking element '//div[contains(@class, "filter-audience")]//button[.="Continue"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:53.747" starttime="20180830 10:41:53.679"></status>
+</kw>
+<kw name="Wait until page is loaded" library="common_keywords">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is not visible.</doc>
+<arguments>
+<arg>//circle</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:53.763" starttime="20180830 10:41:53.749"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180830 10:41:54.764" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180830 10:41:54.764" starttime="20180830 10:41:53.763"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:54.765" starttime="20180830 10:41:53.748"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:54.765" starttime="20180830 10:41:53.646"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:54.765" starttime="20180830 10:41:53.625"></status>
+</kw>
+<kw name="And I click Browse message library button" library="common_keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="${text.lower()}"]</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:54.778" starttime="20180830 10:41:54.766"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="${text.lower()}"]</arg>
+</arguments>
+<msg timestamp="20180830 10:41:54.779" level="INFO">Clicking element '//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="browse message library"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:54.944" starttime="20180830 10:41:54.778"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:54.945" starttime="20180830 10:41:54.766"></status>
+</kw>
+<kw name="Then I choose Use Email for a card name Claims Feedback" library="accounts">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_Message_Library_button_with_card_name.replace('&lt;button_name&gt;','${button_text}').replace('&lt;card_name&gt;','${card_name}')}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:56.199" starttime="20180830 10:41:54.946"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_Message_Library_button_with_card_name.replace('&lt;button_name&gt;','${button_text}').replace('&lt;card_name&gt;','${card_name}')}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:56.200" level="INFO">Clicking element '//div[contains(@class,"card")][contains(., "Claims Feedback")]//span[text()="Use Email"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:56.434" starttime="20180830 10:41:56.199"></status>
+</kw>
+<kw name="Click Continue Button on Create your email" library="accounts">
+<kw name="Wait until page is loaded" library="common_keywords">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is not visible.</doc>
+<arguments>
+<arg>//circle</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:56.445" starttime="20180830 10:41:56.436"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180830 10:41:57.447" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180830 10:41:57.447" starttime="20180830 10:41:56.445"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:57.448" starttime="20180830 10:41:56.435"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180830 10:41:59.462" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180830 10:41:59.462" starttime="20180830 10:41:57.448"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Accounts_Message_Preview_continue}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:59.477" starttime="20180830 10:41:59.462"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${Accounts_Message_Preview_continue}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:59.493" starttime="20180830 10:41:59.477"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Accounts_Message_Preview_continue}</arg>
+</arguments>
+<msg timestamp="20180830 10:41:59.493" level="INFO">Clicking element '//div[contains(@class, "preview")]//button[.="Continue"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:59.568" starttime="20180830 10:41:59.493"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:59.569" starttime="20180830 10:41:56.434"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:59.569" starttime="20180830 10:41:54.945"></status>
+</kw>
+<kw name="And I click Send it now button" library="common_keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="${text.lower()}"]</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:41:59.588" starttime="20180830 10:41:59.571"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="${text.lower()}"]</arg>
+</arguments>
+<msg timestamp="20180830 10:41:59.589" level="INFO">Clicking element '//button[translate(.,'ABCDEFGHIJKLMNOPQRSTUVXYZ','abcdefghijklmnopqrstuvxyz')="send it now"]'.</msg>
+<status status="PASS" endtime="20180830 10:41:59.734" starttime="20180830 10:41:59.588"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:41:59.735" starttime="20180830 10:41:59.570"></status>
+</kw>
+<kw name="Then I should see the a title on the screen is Message Center" library="marketing_dashboard">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>${Marketing_Dashboard_title_template.replace('&lt;text&gt;', '${title}')}</arg>
+<arg>${time_out}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:42:00.248" starttime="20180830 10:41:59.737"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Sleep</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:42:00.249" starttime="20180830 10:42:00.249"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:42:00.250" starttime="20180830 10:41:59.736"></status>
+</kw>
+<kw name="Then I should see an email created previously with email title ${email_title}" library="accounts">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//span[contains(., '${title}')]</arg>
+<arg>${time_out}</arg>
+<arg>Could not see the email with title ${title}</arg>
+</arguments>
+<status status="PASS" endtime="20180830 10:42:00.890" starttime="20180830 10:42:00.251"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:42:00.891" starttime="20180830 10:42:00.251"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180830 10:42:03.071" starttime="20180830 10:42:00.891"></status>
+</kw>
+<status status="PASS" endtime="20180830 10:42:03.071" critical="yes" starttime="20180830 10:41:34.969"></status>
+</test>
+<status status="PASS" endtime="20180830 10:42:03.071" starttime="20180830 10:41:34.853"></status>
+</suite>
+<status status="PASS" endtime="20180830 10:42:03.071" starttime="20180830 10:41:34.853"></status>
+</suite>
+<status status="PASS" endtime="20180830 10:42:03.071" starttime="20180830 10:41:34.829"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="AgencyRevolution" pass="1">AgencyRevolution</stat>
+<stat fail="0" id="s1-s1" name="Test Suites" pass="1">AgencyRevolution.Test Suites</stat>
+<stat fail="0" id="s1-s1-s1" name="Sample Scenario" pass="1">AgencyRevolution.Test Suites.Sample Scenario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

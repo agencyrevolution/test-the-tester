@@ -1,0 +1,10 @@
+--outputdir
+c:\users\minhn\appdata\local\temp\RIDEtfbohp.d
+-C
+off
+-W
+84
+--suite
+AgencyRevolution.Test Suites.Sample Scenario
+--test
+AgencyRevolution.Test Suites.Sample Scenario.A Sample Test Case
